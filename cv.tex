@@ -1,0 +1,425 @@
+% !TEX TS-program = xelatex
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vmargin=2cm, hmargin=2.0cm]{geometry}
+\usepackage{enumitem} % fancier lists
+
+% Use Palatino font
+\usepackage{fontspec}
+% \setmainfont[BoldFont=texgyrepagella-bold.otf, ItalicFont=texgyrepagella-italic.otf, BoldItalicFont=texgyrepagella-bolditalic.otf]{texgyrepagella-regular.otf}
+
+% Define custom environments
+\usepackage{environ}
+
+% Disable hyphenation in the CV
+\usepackage[none]{hyphenat}
+
+% Configure paragraph spacings
+\setlength{\parindent}{0cm} % Remove indentations
+
+% Configure the font style for sections
+\usepackage{titlesec}
+\titleformat{\section}
+    [hang] % the default shape for sections
+    {\normalfont\LARGE\bfseries} % format
+    {} % label
+    {0pt} % separation (left separation for hang)
+    {} % before title
+    [\titlerule] % after title
+\titleformat{\subsection}
+    [hang] % the default shape for sections
+    {} % format
+    {} % label
+    {0pt} % separation (left separation for hang)
+    {} % before title
+
+% Disable number of sections. Use this instead of "section*" so that the
+% sections still appear as PDF bookmarks. Otherwise, would have to add the
+% table of contents entries manually.
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+% Configure fancyhdr
+\usepackage{fancyhdr}
+\usepackage{lastpage} % get the total page numbers (\pageref{LastPage})
+\fancyhf{}  % clear current head and footer
+\fancyfoot[C]{\small \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0cm} % remove header rule
+\pagestyle{fancy}
+
+% Define new colors
+\usepackage{xcolor}
+\definecolor{mygray}{HTML}{555555}
+
+ % Define multipage tables (used for cv entries)
+\usepackage{tabularx}
+\usepackage{ltablex}
+
+% Boolean operators
+\usepackage{ifthen}
+
+% -----------
+% Information
+% -----------
+\newcommand{\nametitle}{}
+\newcommand{\firstname}{Agustina}
+\newcommand{\middlename}{}
+\newcommand{\familyname}{Pesce Lopez}
+\newcommand{\email}{pesce.agustina@gmail.com}
+\newcommand{\website}{www.aguspesce.github.io}
+\newcommand{\github}{aguspesce}
+\newcommand{\linkedin}{aguspesce}
+\newcommand{\orcid}{0000-0002-5538-8845}
+
+
+% ------------
+% Institutions
+% ------------
+\newcommand{\coco}{
+    \href{https://www.codecommunicate.org/}{Code to Communicate Program}
+}
+\newcommand{\conicet}{
+    Consejo Nacional de Investigaciones Científicas y Técnicas
+}
+\newcommand{\igsv}{Instituto Geofísico Sismológico Volponi}
+\newcommand{\fcefn}{
+    Facultad de Ciencias Exactas, Físicas y Naturales
+}
+\newcommand{\unsj}{Universidad Nacional de San Juan}
+\newcommand{\fceia}{
+    Facultad de Ciencias Exactas, Ingeniería y Agrimensura%
+}
+\newcommand{\unr}{Universidad Nacional de Rosario}
+\newcommand{\carpentry}{\href{https://carpentries.org/}{The Carpentry}}
+\newcommand{\mandyoc}{\href{https://github.com/ggciag/mandyoc}{Mandyoc}}
+\newcommand{\fatiando}{\href{https://www.fatiando.org/}{Fatiando a Terra}}
+
+% --------------------------
+% Variables and environments
+% --------------------------
+% New variables
+\newcommand{\fullname}{\firstname{} \familyname}
+% Titles and headings
+\newcommand{\maintitle}[1]{
+    \begin{center}
+        \textbf{\Huge #1}
+    \end{center}
+}
+\newcommand{\subtitle}[1]{
+    \begin{center}
+        {\large #1}
+    \end{center}
+}
+\newcommand{\affiliation}[1]{
+    \begin{center}
+        {#1}
+    \end{center}
+}
+
+% Entries
+\newcommand{\entriespad}{0.75em}
+\NewEnviron{cventries}{
+    \vspace{-1em}
+    \begin{tabularx}{\textwidth}{p{0.12\textwidth} p{0.82\textwidth}}
+    \BODY
+    \end{tabularx}
+}
+\newcommand{\singleline}[2]{{#1} & {#2} \vspace{\entriespad} \\}
+\newcommand{\multiline}[3]{{#1} & {{#2} \newline {#3}} \vspace{0.6em} \\}
+% \newcommand{\paper}[5]{
+%     {#1} & {{#2}, \emph{#3} \newline {#4} \newline doi:~\DOI{#5}}
+%     \vspace{\entriespad} \\
+% }
+\newcommand{\paper}[5]{{#1} & {{#2}, \emph{#3}} \vspace{\entriespad} \\}
+\newcommand{\talk}[5]{
+    {#1} & {{#2}, \emph{#3} \ifthenelse{\equal{#4}{}}{}{\newline {#4}}
+    \ifthenelse{\equal{#5}{}}{}{\newline doi:~\DOI{#5}}}
+    \vspace{\entriespad} \\
+}
+
+% Macros
+\newcommand{\MAIL}[1]{\href{mailto:#1}{#1}}
+\newcommand{\GITHUB}[1]{\href{https://github.com/#1}{github.com/#1}}
+\newcommand{\ORCID}[1]{\href{https://orcid.org/#1}{#1}}
+\newcommand{\WEBSITE}[1]{\href{https://#1}{#1}}
+\newcommand{\DOI}[1]{\href{https://www.doi.org/#1}{#1}}
+\newcommand{\LINKEDIN}[1]{\href{https://linkeding.com/#1}{linkedin.com/#1}}
+
+% ------------------
+% Configure hyperref
+% ------------------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    allcolors=[rgb]{0, 0.451, 0.753},
+    pdftitle={\fullname{}'s Curriculum Vitae},
+    pdfauthor={\fullname},
+}
+\urlstyle{same}
+
+% ------------------------------------------------------------------------
+
+\begin{document}
+
+
+% ------
+% Header
+% ------
+\maintitle{\fullname}
+\subtitle{Phd Geophysics | Data Scientist | Physics | Python | GNU/Linux}
+% \affiliation{}
+
+\begin{minipage}[t]{0.60\linewidth}
+    \begin{flushleft}
+        \textbf{Address:} Vancouver, Canada
+        \\
+        \textbf{email:} \MAIL{\email}
+        \\
+        \textbf{website:} \WEBSITE{\website}
+    \end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+    \begin{flushright}
+        \textbf{ORCID:} \ORCID{\orcid}
+        \\
+        \textbf{GitHub:} \GITHUB{\github}
+        \\
+        \textbf{Linkedin:} \LINKEDIN{\linkedin}
+    \end{flushright}
+\end{minipage}
+
+\color{mygray}{Last modified: \today}
+
+\section{About me}
+
+I have a degree in Psychics and a Phd in Gepphysics.
+I have experience using different Python libraries to process, visualize and
+analyze data to solve challenging problems.
+This also allowed me to familiarize with GitHub workflows, version-control
+systems and best practices for software development.
+My background in Physics allow me to insert myself in different topics.
+This is complemented with my experience on working with interdisciplinary groups
+and remotely.
+
+
+\section{Education}
+
+\begin{cventries}
+    \multiline{2014 - 2019}{PhD in Geophysics}{\fcefn, \unsj, Argentina.}
+    \multiline{2005 - 2014}{Licentiate in Physics}{\fceia, \unr, Argentina.}
+\end{cventries}
+
+
+\section{Professional Experience}
+
+\begin{cventries}
+    \multiline{Nov 2021 - on}{\textbf{Coding Coordinator and Trainer} in
+    \coco.}{%
+    * \emph{Led and supervised} the team of 5+ coding trainers. \newline
+    * \emph{Scheduled} weekly meetings with trainers where they reported
+    lessons progress.\newline
+    * \emph{Organized and supervised} a hackathon where participants developed
+    a project using the coding skills learned.\newline
+    * \emph{Collaborated} in different tasks to create a good foundation for
+    the program.\newline
+    * \emph{Created, organised and maintained} a GitHub repository with the
+    coding material to teach in the lessons.\newline
+    * \emph{Developed} Jupyter notebook with the lesson material about Python
+    coding and Git.\newline
+    }
+
+    \multiline{Apr 2019 - Mar 2022}{\textbf{Postdoctoral Researcher} in \igsv,
+    Argentina.}{
+    * \emph{Developed} Python script to create different subduction models and
+    plot results using Xarray, NumPy and Matplotlib.\newline
+    * \emph{Built} my own Python library to create and plot the models to
+    improve and save time in the prossess.\newline
+    * \emph{Ran} numerical models using Google Cloud Platform and parallelized
+    tasks through Open MPI.\newline
+    * \emph{Automated task} using Bash scripting to upload and download data
+    from Google Cloud Platform.\newline
+    * \emph{Developed and taught} an
+    \href{https://github.com/aguspesce/online_seminar_IAG-USP}{Xarray seminary}
+    for the lab members.\newline
+    * \emph{Presented} the project results in different scientific meetings.
+    }
+
+    \multiline{Oct 2019 - Mar 2022}{\textbf{Assistant Professor of Practice} in
+    \fcefn, \unsj, Argentina}{
+    * \emph{Led, supervised and evaluated} student performance and laboratory
+      practices.\newline
+    * \emph{Collaborated} in the lesson preparation and participated in the
+    teaching lessons.\newline
+    * \emph{Taught} physics for 15+ students per week.
+    }
+
+    \multiline{Apr 2014 - Mar 2019}{\textbf{PhD Researcher} in \igsv,
+    Argentina.}{
+    * \emph{Designed, managed and developed} a scientific project archiving a
+    PhD Thesis.\newline
+    * \emph{Compiled, processed, analyzed and interpreted} gravity and magnetic
+    data from different sources (satellite and field) using specialized
+    software and different Python libraries (NumPy, Pandas, Matplotlib,
+    Cartopy), resulting in some scientific articles and book chapters.\newline
+    * \emph{Participated} in the organization of data acquisition in the field
+    according to our team data processing needs.\newline
+    * \emph{Assisted} peers to improve their publications plotting and analyzing
+    their data.\newline
+    * \emph{Presented} the PhD thesis results in different scientific meetings.
+    \newline
+    Thesis title: \href{https://ri.conicet.gov.ar/handle/11336/84580}{Análisis
+    geofísico de la Fosa de Loncopué, Neuquén}
+    }
+\end{cventries}
+
+\section{Project}
+\begin{cventries}
+    \multiline{Jun 2022 - On}{\textbf{Maintainer} of one of the core lessons of
+    \carpentry.}{
+        \href{https://datacarpentry.org/python-ecology-lesson-es/}{Análisis y
+        visualización de datos usando Python}}
+
+    \multiline{2020}{\href{https://dashboard-covid-ar.herokuapp.com/}{Dashboard}
+    to show the evolution of the COVID-19 in each province of Argentina.}{
+    * \emph{Designed and developed} the code using Pandas, Plotly and
+    Dash.\newline
+    * \emph{Loaded, cleaned and processed} the data using Panda.\newline
+    *\emph{Created} interactive plots to show the evolution of the number of
+    cases in Argentina using Plotly.\newline
+    * \emph{Developed} a interactive web application to show the results for
+    each province of Argentina.\newline
+    * \emph{Deployed} the web app on Heroku.
+    }
+
+    \multiline{Apr 2019 - On}{\textbf{Collaborator} in \mandyoc.}{
+    * \emph{Automated deployment} of the documentation website through GitHub
+    Actions.\newline
+    * \emph{Programmed} the tests to check the correct performing of the
+    code using Pytest.\newline
+    * \emph{Worked} on community building adding license, code of conduct, how
+    to contribute guidelines and Readme to improve the repository.\newline
+    * \emph{Implemented} the gallery examples using Jupyter notebooks.\newline
+    * \emph{Developed} a Makefile for building and installing.\newline
+    * \emph{Collaborate} in the publication of \mandyoc code in the
+    \href{https://joss.theoj.org/papers/10.21105/joss.04070}{Journal of Open
+    Source Software}.
+    }
+
+    \multiline{2016 - On}{\textbf{Collaborator} in \fatiando.}{%
+    * \emph{Implemented} new methodologies with unit tests using Pytest,
+    documentation and use case.\newline
+    * \emph{Improved} the main website project.\newline
+    * \emph{Create} new examples notebook explaining how to use the
+    library.\newline
+    * \emph{Fixed} CI errors.\newline
+    * \emph{Made} maintenance tasks (CI fixes, automation of tasks, website).\newline
+    * \emph{Active participation} on Developers and Community meetings.
+    }
+
+    \singleline{2021}{\textbf{Developer} of
+        \href{https://dianaceroallard.github.io/}{Diana Acero} personal
+        website.}
+
+    \singleline{2021}{\textbf{Developer} of
+        \href{https://geolatinas.github.io/}{Geolatinas coding group} website.}
+
+    \singleline{2021}{\textbf{Developer} of
+        \href{https://aguspesce.github.io/web-cromografica}{CromoGráfica}
+        website. It is a business website currently under development.}{}
+\end{cventries}
+
+
+\section{Technical Skills}
+
+\begin{description}
+    \item[Programming:] Python (NumPy, Pandas, Xarray, Matplotlib, Plotly, Dash,
+    Pygmt), Numba, bash, FORTRAN, C \item[Markup] Markdown, LaTeX, HTML
+    \item[WebDev:] CSS, Bootstrap, Normalize, Static Site Generators (jekyll,
+        urubu)
+    \item[DevOps:] GNU/Linux, Unix terminal, VIM, Neovim, VS Code, git, GNU Make, SSH
+    \item[Graphic Design:] Inkscape, GIMP, Krita
+    \item[Other tools:] Jupyter Notebooks, JupyterLAb, LibreOffice Suite, PGP, GitHub
+        Actions, maxima
+\end{description}
+
+\section{Languages}
+
+\begin{description}
+    \item[Spanish:] Native
+    \item[English:] Advanced
+    \item[Italian:] Beginner
+\end{description}
+
+\section{Certifications}
+
+\begin{cventries}
+    \singleline{2022}{Maintainer for The Carpentry}
+    \singleline{2021}{Certified Software Carpentry Instructor}
+\end{cventries}
+
+
+\section{Awards and Scholarships}
+
+\begin{cventries}
+    \singleline{2019 - 2022}{Postdoctoral Scholarship from \conicet.}
+    \singleline{2014 - 2019}{Phd scholarship from \conicet.}
+    \singleline{2015}{Travel grants: SEG/ExxonMobil Student Education Program
+    (SEP), New Orleans, EE.UU.}
+\end{cventries}
+
+
+\section{Last Publications}
+\subsection{Peer-reviewed papers}
+
+\begin{cventries}
+    \paper{2022}{\href{https://joss.theoj.org/papers/10.21105/joss.04070.pdf}{Mandyoc:
+    A finite element code to simulate thermochemical convection in
+    parallel}}{Journal of Open-Source Software, 7(71). 4070.}{}
+
+    \paper{2021}{\href{https://revista.geologica.org.ar/raga/article/view/246}{Sección
+    eléctrica cortical a través de la fosa de Loncopué}}{Revista de la Asociación
+    Geológica Argentina 78 (2), 333-337.}{}
+
+    \paper{2020}{\href{https://doi.org/10.1016/j.tecto.2020.228402}{Oligocene
+    to present shallow subduction beneath the southern Puna
+    plateau}}{Tectonophysics.}{}{}
+\end{cventries}
+
+\subsection{Books Chapters}
+
+\begin{cventries}
+    \paper{2020}{\href{https://link.springer.com/chapter/10.1007/978-3-030-29680-3_22}{Pliocene to Quaternary Retroarc Extension in the Neuquén
+    Basin: Geophysical Characterization of the Loncopué Trough}}{Opening and
+    closure of the Neuquén Basin in the Southern Andes, Springer}{}
+
+    \paper{2020}{\href{https://link.springer.com/chapter/10.1007/978-3-030-29680-3_20}{Plume Subduction Beneath the Neuquén Basin and the Last Mountain Building Stage of the Southern Central Andes}}{Opening and
+    closure of the Neuquén Basin in the Southern Andes, Springer}{}
+
+\end{cventries}
+
+\section{Last Conference Proceedings and Talks}
+
+\begin{cventries}
+    \talk{2022}{\href{https://www.youtube.com/watch?v=wzrIF4zpshM&feature=emb_title}{Mandyoc:
+    A finite element code to simulate thermochemical convection in parallel}}{presented at Transform 2022.}{}{}
+
+    \talk{2021}{\href{https://github.com/GeoLatinas/intro-to-git-2021}{Introduction
+    to Git and GitHub}}{for GeoLatinas.}{}{}
+
+    \talk{2021}{\href{https://github.com/fatiando/2021-gsh}{Fatiando a Terra:
+    Open-source tools for geophysics}}{Online talk given to the Geophysical
+    Society of Houston (GSH)}{}{}
+
+    \talk{2021}{\href{https://doi.org/10.5194/egusphere-egu21-8291}{Harmonica
+    and Boule: Modern Python tools for geophysical gravimetry}}{EGU2021 General
+    Assembly}{}{}
+
+    \talk{2020}{\href{https://doi.org/10.5194/egusphere-egu2020-734}{valuation
+    of the presence of a weak layer in the numerical simulation of lithospheric
+    subduction}}{EGU2020 General Assembly}{}{}
+\end{cventries}
+
+
+\end{document}
