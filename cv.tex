@@ -12,7 +12,7 @@
 \usepackage{environ}
 
 % Disable hyphenation in the CV
-\usepackage[none]{hyphenat}
+% \usepackage[none]{hyphenat}
 
 % Configure paragraph spacings
 \setlength{\parindent}{0cm} % Remove indentations
@@ -67,7 +67,7 @@
 \newcommand{\middlename}{}
 \newcommand{\familyname}{Pesce Lopez}
 \newcommand{\email}{pesce.agustina@gmail.com}
-\newcommand{\website}{www.aguspesce.github.io}
+\newcommand{\website}{aguspesce.github.io}
 \newcommand{\github}{aguspesce}
 \newcommand{\linkedin}{aguspesce}
 \newcommand{\orcid}{0000-0002-5538-8845}
@@ -137,14 +137,15 @@
     \ifthenelse{\equal{#5}{}}{}{\newline doi:~\DOI{#5}}}
     \vspace{\entriespad} \\
 }
+\newcommand{\education}[3]{{#1} & {\textbf{#2} \newline {#3}} \\}
 
 % Macros
 \newcommand{\MAIL}[1]{\href{mailto:#1}{#1}}
-\newcommand{\GITHUB}[1]{\href{https://github.com/#1}{github.com/#1}}
+\newcommand{\GITHUB}[1]{\href{https://github.com/#1}{@#1}}
 \newcommand{\ORCID}[1]{\href{https://orcid.org/#1}{#1}}
 \newcommand{\WEBSITE}[1]{\href{https://#1}{#1}}
 \newcommand{\DOI}[1]{\href{https://www.doi.org/#1}{#1}}
-\newcommand{\LINKEDIN}[1]{\href{https://linkeding.com/#1}{linkedin.com/#1}}
+\newcommand{\LINKEDIN}[1]{\href{https://linkeding.com/#1}{#1}}
 
 % ------------------
 % Configure hyperref
@@ -172,7 +173,7 @@
 
 \begin{minipage}[t]{0.60\linewidth}
     \begin{flushleft}
-        \textbf{Address:} Vancouver, Canada
+        \textbf{Location:} Vancouver, Canada
         \\
         \textbf{email:} \MAIL{\email}
         \\
@@ -194,7 +195,7 @@
 
 \section{About me}
 
-I have a degree in Psychics and a Phd in Gepphysics.
+I have a degree in Physics and a Phd in Geophysics.
 I have experience using different Python libraries to process, visualize and
 analyze data to solve challenging problems.
 This also allowed me to familiarize with GitHub workflows, version-control
@@ -207,8 +208,8 @@ and remotely.
 \section{Education}
 
 \begin{cventries}
-    \multiline{2014 - 2019}{PhD in Geophysics}{\fcefn, \unsj, Argentina.}
-    \multiline{2005 - 2014}{Licentiate in Physics}{\fceia, \unr, Argentina.}
+    \education{2014 - 2019}{PhD in Geophysics}{\fcefn, \unsj, Argentina.}
+    \education{2005 - 2014}{Licentiate in Physics}{\fceia, \unr, Argentina.}
 \end{cventries}
 
 
@@ -216,7 +217,7 @@ and remotely.
 
 \begin{cventries}
     \multiline{Nov 2021 - on}{\textbf{Coding Coordinator and Trainer} in
-    \coco.}{%
+    \coco.}{
     * \emph{Led and supervised} the team of 5+ coding trainers. \newline
     * \emph{Scheduled} weekly meetings with trainers where they reported
     lessons progress.\newline
@@ -340,7 +341,7 @@ and remotely.
         urubu)
     \item[DevOps:] GNU/Linux, Unix terminal, VIM, Neovim, VS Code, git, GNU Make, SSH
     \item[Graphic Design:] Inkscape, GIMP, Krita
-    \item[Other tools:] Jupyter Notebooks, JupyterLAb, LibreOffice Suite, PGP, GitHub
+    \item[Other tools:] Jupyter Notebooks, JupyterLAb, LibreOffice Suite, GitHub
         Actions, maxima
 \end{description}
 
@@ -349,7 +350,6 @@ and remotely.
 \begin{description}
     \item[Spanish:] Native
     \item[English:] Advanced
-    \item[Italian:] Beginner
 \end{description}
 
 \section{Certifications}
@@ -366,7 +366,7 @@ and remotely.
     \singleline{2019 - 2022}{Postdoctoral Scholarship from \conicet.}
     \singleline{2014 - 2019}{Phd scholarship from \conicet.}
     \singleline{2015}{Travel grants: SEG/ExxonMobil Student Education Program
-    (SEP), New Orleans, EE.UU.}
+    (SEP), New Orleans, USA.}
 \end{cventries}
 
 
@@ -410,15 +410,15 @@ and remotely.
 
     \talk{2021}{\href{https://github.com/fatiando/2021-gsh}{Fatiando a Terra:
     Open-source tools for geophysics}}{Online talk given to the Geophysical
-    Society of Houston (GSH)}{}{}
+    Society of Houston (GSH).}{}{}
 
     \talk{2021}{\href{https://doi.org/10.5194/egusphere-egu21-8291}{Harmonica
     and Boule: Modern Python tools for geophysical gravimetry}}{EGU2021 General
-    Assembly}{}{}
+    Assembly.}{}{}
 
-    \talk{2020}{\href{https://doi.org/10.5194/egusphere-egu2020-734}{valuation
+    \talk{2020}{\href{https://doi.org/10.5194/egusphere-egu2020-734}{Evaluation
     of the presence of a weak layer in the numerical simulation of lithospheric
-    subduction}}{EGU2020 General Assembly}{}{}
+    subduction}}{EGU2020 General Assembly.}{}{}
 \end{cventries}
 
 
