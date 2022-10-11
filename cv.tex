@@ -44,7 +44,7 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage} % get the total page numbers (\pageref{LastPage})
 \fancyhf{}  % clear current head and footer
-\fancyfoot[C]{\small \thepage\ of \pageref{LastPage}}
+\fancyfoot[C]{\small \thepage\ of~\pageref{LastPage}}
 \renewcommand{\headrulewidth}{0cm} % remove header rule
 \pagestyle{fancy}
 
@@ -70,7 +70,7 @@
 \newcommand{\website}{aguspesce.github.io}
 \newcommand{\github}{aguspesce}
 \newcommand{\linkedin}{aguspesce}
-\newcommand{\orcid}{0000-0002-5538-8845}
+\newcommand{\orcid}{0000--0002--5538--8845}
 
 % ------------
 % Institutions
@@ -88,7 +88,17 @@
 \newcommand{\mandyoc}{\href{https://github.com/ggciag/mandyoc}{Mandyoc}}
 \newcommand{\xarray}{\href{https://xarray.dev/}{Xarray}}
 \newcommand{\matplotlib}{\href{https://matplotlib.org/}{Matplotlib}}
+\newcommand{\numpy}{\href{https://numpy.org/}{NumPy}}
+\newcommand{\pandas}{\href{https://pandas.pydata.org/}{Pandas}}
+\newcommand{\plotly}{\href{https://plotly.com/python/}{Plotly}}
+\newcommand{\dash}{\href{https://dash.plotly.com/introduction}{Dash}}
+\newcommand{\pytest}{\href{https://docs.pytest.org/en/7.1.x/contents.html}{Pytest}}
+\newcommand{\pygmt}{\href{https://www.pygmt.org/latest/}{PyGMT}}
+\newcommand{\scipy}{\href{https://scipy.org/}{SciPy}}
 \newcommand{\fatiando}{\href{https://www.fatiando.org/}{Fatiando a Terra}}
+\newcommand{\jupyter}{\href{https://jupyter.org/}{Jupyter}}
+\newcommand{\GoogleCP}{\href{https://cloud.google.com/}{Google Cloud Platform}}
+\newcommand{\heroku}{\href{https://www.heroku.com/}{Heroku}}
 
 % --------------------------
 % Variables and environments
@@ -117,13 +127,13 @@
 \NewEnviron{cventries}{
     \vspace{-1em}
     \begin{tabularx}{\textwidth}{p{0.16\textwidth} p{0.8\textwidth}}
-    \BODY
+    \BODY%
     \end{tabularx}
 }
 \NewEnviron{lista}{%
     \begin{itemize}[leftmargin=3em]
         \setlength\itemsep{0em}
-        \BODY
+        \BODY%
     \end{itemize}
 }
 \newcommand{\education}[3]{%
@@ -218,7 +228,7 @@ creative way applying the best practices to do it.
 
 \section{Professional Experience}
 
-\experience{Nov 2021 -- on}{Coding Coordinator and Trainer}{\coco}{%
+\experience{Nov 2021~--~on}{Coding Coordinator and Trainer}{\coco}{%
     \newline
     An NSF-funded bilingual coding and science communication training program
     for early career geoscientists.
@@ -231,18 +241,18 @@ creative way applying the best practices to do it.
             communication skills by the end of the program.
         \item {\bf Organized} and {\bf supervised} a 1-week hackathon where
             participants developed a shared project using version control
-            system and Jupyter Notebooks, and communicated the achieved goals
+            system and \jupyter{} Notebooks, and communicated the achieved goals
             and results through public presentations.
     \item {\bf Created} and {\bf maintained} a
             \href{https://github.com/CodeToCommunicate/CoCoLessons}{GitHub
-            repository} with the course material: Jupyter Notebooks used to
+            repository} with the course material: \jupyter{} Notebooks used to
             teach during each lessons.
     \item {\bf Reported} the progress of the project to superior managers and
             external evaluators.
     \end{lista}
 }
 
-\experience{Apr 2019 -- Mar 2022}{Postdoctoral Researcher}{\igsv, Argentina}{%
+\experience{Apr 2019~--~Mar 2022}{Postdoctoral Researcher}{\igsv, Argentina}{%
     Project title: {\em Influence of a mantle plume in subduction zones by
     geodynamics numerical models.}
     \begin{lista}
@@ -250,8 +260,8 @@ creative way applying the best practices to do it.
             for running geodynamical numerical simulations of the Earth's
             interior.
         \item {\bf Developed} a Bash pipeline to create subduction models as
-            inputs for \mandyoc{}, run the simulations remotely on Google
-            Cloud Platform and download the outputs.
+            inputs for \mandyoc{}, run the simulations remotely on \GoogleCP{}
+            and download the outputs.
         \item {\bf Built}
             \href{https://github.com/aguspesce/tapioca}{tapioca}: a Python
             package to transform and visualize the outputs of \mandyoc{} using
@@ -266,7 +276,7 @@ creative way applying the best practices to do it.
     \end{lista}
 }
 
-\experience{Oct 2019 -- Mar 2022}{Assistant Professor of Practice}{%
+\experience{Oct 2019~--~Mar 2022}{Assistant Professor of Practice}{%
     \fcefn, \unsj, Argentina}{
     \begin{lista}
         \item {\bf Led} the practice and lab classes of Physics courses for
@@ -281,7 +291,7 @@ creative way applying the best practices to do it.
     \end{lista}
 }
 
-\experience{Apr 2014 -- Mar 2019}{PhD Researcher}{%
+\experience{Apr 2014~--~Mar 2019}{PhD Researcher}{%
     \igsv, Argentina \newline
     Thesis title:
         {\em
@@ -296,8 +306,8 @@ creative way applying the best practices to do it.
             PhD granted with a {\bf scholarship} from \conicet{}.
         \item {\bf Compiled} and {\bf preprocessed} gravity and magnetic
             datasets from different sources (ground and satellite) using
-            specialized software and Python libraries like NumPy, Pandas,
-            Xarray and Fatiando a Terra.
+            specialized software and Python libraries like \numpy{}, \pandas{},
+            \xarray{} and \fatiando{}.
         \item {\bf Applied geophysical processing steps} to produce
             interpretable maps of the study area.
         \item {\bf Inverted} the gravity data to get better understanding of
@@ -317,14 +327,14 @@ creative way applying the best practices to do it.
 \section{Education}
 
 \begin{cventries}
-    \education{2014 -- 2019}{PhD in Geophysics}{\fcefn, \unsj, Argentina}
-    \education{2005 -- 2014}{Licentiate in Physics}{\fceia, \unr, Argentina}
+    \education{2014~--~2019}{PhD in Geophysics}{\fcefn, \unsj, Argentina}
+    \education{2005~--~2014}{Licentiate in Physics}{\fceia, \unr, Argentina}
 \end{cventries}
 
 
 \section{Projects}
 
-\experience{Jun 2022 -- On}{%
+\experience{Jun 2022~--~On}{%
     Maintainer of collaborative Python lesson
     }{%
     \carpentries{}
@@ -348,26 +358,27 @@ creative way applying the best practices to do it.
     Visualization of the evolution of COVID-19 on each province of Argentina}{
     \begin{lista}
         \item {\bf Loaded}, {\bf cleaned} and {\bf processed} the data using
-            Pandas.
+            \pandas{}.
         \item {\bf Created interactive plots} showing the evolution of
-            cases for each province using Plotly and Dash.
+            cases for each province using \plotly{} and \dash{}.
         \item {\bf Developed} a interactive web application and
-            {\bf deployed} it on Heroku.
+            {\bf deployed} it on \heroku{}.
     \end{lista}
 }
 
 
-\experience{Apr 2019 - On}{\mandyoc{} collaborator}{Open source tool to
+\experience{Apr 2019~--~On}{\mandyoc{} collaborator}{Open source tool to
     simulate the mantle dynamics}{
     \begin{lista}
         \item {\bf Automated deployment} of the documentation website
             through GitHub Actions.
-        \item {\bf Designed and coded} tests to check the correct performing of
-            the code using Pytest.
+        \item {\bf Designed and coded tests} to check the correct performing of
+            the code using \pytest{}.
         \item {\bf Worked} on community building adding license, code of
             conduct, how to contribute guidelines and Readme to improve the
             repository.
-        \item {\bf Implemented} a gallery examples using Jupyter notebooks.
+        \item {\bf Restructured} the examples gallery using \jupyter{}
+            notebooks to show how to use the code with real examples.
         \item {\bf Developed} a Makefile for building and installing the
             program.
         \item {\bf Collaborate} in the publication of \mandyoc{} code in the
@@ -376,39 +387,45 @@ creative way applying the best practices to do it.
     \end{lista}
 }
 
-\experience{2016 - On}{Collaborator in \fatiando}{Open source tools for
+\experience{2016~--~On}{\fatiando{} collaborator}{Open source tools for
     geophysics}{
     \begin{lista}
-        \item {\bf Implemented new methodologies} with unit tests using
-            Pytest, documentation and use case.
+        \item {\bf Implemented new features} with unit tests using \pytest{},
+            documentation and an example of how to use it.
         \item {\bf Improved} the main website project.
         \item {\bf Create new examples notebook} explaining how to use the
             library.
-        \item {\bf Made maintenance tasks} (CI fixes, automation of tasks,
-            website).
-        \item {\bf Active participation} on Developers and Community
-            meetings.
+        \item {\bf Made maintenance tasks} to fix CI, code automated tasks and
+            delate deprecated code.
+        \item {\bf Participated} in developers and community meetings to
+            discuss how to improve the current tools, cultivate the community,
+            design examples, etc.
     \end{lista}
 }
 
-\experience{2021}{Developer of \href{https://dianaceroallard.github.io/}{%
-    Diana Acero}}{A personal website}{}
-
-\experience{2021}{Developer of \href{https://geolatinas.github.io/}{%
-    Geolatinas coding group}}{Organization website}{}
-
-\experience{2021}{Developer of
-    \href{https://aguspesce.github.io/web-cromografica}{CromoGráfica}}{%
-        A business website currently under development
-}{}
-
+\experience{2021}{Website developer}{}{%
+    \begin{lista}
+    \item {\bf Created website layouts} for different projects:
+        \begin{lista}
+            \item \href{https://dianaceroallard.github.io/}{%
+                Diana Acero personal website}.
+            \item \href{https://geolatinas.github.io/}{%
+                Geolatinas coding group: organization website}
+            \item \href{https://aguspesce.github.io/web-cromografica}{%
+                CromoGráfica: business website currently under development}.
+        \end{lista}
+        \item {\bf Developed a clean code} for all projects and {\bf deployed}
+            it using GitHub Actions and GitHub Pages.
+        \item {\bf Maintained} and {\bf updated} websites based on feedback.
+    \end{lista}
+}
 
 
 \section{Technical Skills}
 
 \begin{cventries}
-    \skill{Programming}{Python (NumPy, Pandas, SciPy, Xarray, Matplotlib,
-        Plotly, Dash, Pygmt), Numba, bash, FORTRAN, C}
+    \skill{Programming}{Python (\numpy{}, \pandas{}, \scipy{}, \xarray{},
+        \matplotlib{}, \plotly{}, \dash{}, \pygmt{}), Numba, bash, FORTRAN, C}
     \skill{Markup}{Markdown, LaTeX, HTML}
     \skill{WebDev}{CSS, Bootstrap, Normalize, Static Site Generators
         (jekyll, urubu)}
@@ -437,8 +454,8 @@ creative way applying the best practices to do it.
 \section{Awards and Scholarships}
 
 \begin{cventries}
-    \singleline{2019 - 2022}{Postdoctoral Scholarship from \conicet}
-    \singleline{2014 - 2019}{Phd scholarship from \conicet}
+    \singleline{2019~--~2022}{Postdoctoral Scholarship from \conicet}
+    \singleline{2014~--~2019}{Phd scholarship from \conicet}
     \singleline{2015}{Travel grants: SEG/ExxonMobil Student Education Program
         (SEP), New Orleans, USA}
 \end{cventries}
@@ -454,7 +471,7 @@ creative way applying the best practices to do it.
 
     \paper{2021}{\href{https://revista.geologica.org.ar/raga/article/view/246}{%
         Sección eléctrica cortical a través de la fosa de Loncopué}}{Revista de
-        la Asociación Geológica Argentina 78 (2), 333-337.}
+        la Asociación Geológica Argentina 78 (2), 333--337.}
 
     \paper{2020}{\href{https://doi.org/10.1016/j.tecto.2020.228402}{Oligocene
         to present shallow subduction beneath the southern Puna plateau}}{%
