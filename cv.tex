@@ -99,6 +99,7 @@
 \newcommand{\jupyter}{\href{https://jupyter.org/}{Jupyter}}
 \newcommand{\GoogleCP}{\href{https://cloud.google.com/}{Google Cloud Platform}}
 \newcommand{\heroku}{\href{https://www.heroku.com/}{Heroku}}
+\newcommand{\geolatinas}{\href{https://geolatinas.org/}{GeoLatinas}}
 
 % --------------------------
 % Variables and environments
@@ -126,7 +127,7 @@
 \newcommand{\entriespad}{0.75em}
 \NewEnviron{cventries}{
     \vspace{-1em}
-    \begin{tabularx}{\textwidth}{p{0.16\textwidth} p{0.8\textwidth}}
+    \begin{tabularx}{\textwidth}{p{0.15\textwidth} p{0.8\textwidth}}
     \BODY%
     \end{tabularx}
 }
@@ -153,6 +154,7 @@
 \newcommand{\singleline}[2]{{#1} & {#2} \vspace{\entriespad} \\}
 \newcommand{\paper}[3]{{#1} & {{#2}, \emph{#3}} \vspace{\entriespad} \\}
 \newcommand{\talk}[3]{{#1} & {{#2}, \emph{#3}} \vspace{\entriespad} \\}
+\newcommand{\service}[2]{{\bf \large #1} \newline {#2} \vspace{\entriespad} \\}
 
 % Macros
 \newcommand{\MAIL}[1]{\href{mailto:#1}{#1}}
@@ -181,7 +183,7 @@
 % Header
 % ------
 \maintitle{\fullname}
-\subtitle{Phd Geophysics | Data Scientist | Physics | Python | GNU/Linux | Open
+\subtitle{PhD Geophysics | Data Scientist | Physics | Python | GNU/Linux | Open
 Source}
 % \affiliation{}
 \vspace{\entriespad}
@@ -210,20 +212,22 @@ Source}
 % \color{mygray}{Last modified: \today}
 
 
-\section{About me}
+% \section{About me for Objective  Statement}
+
+\vspace{\entriespad}
 
 I have a degree in Physics and a Phd in Geophysics with an strong formation in
 mathematics, programming and research.
-My background allow me working with real data sets to understand Earth process
+My background allows me to work with real data sets to understand Earth process
 and structures using Python libraries to compile, manipulate, visualize and
 analyze different type of data.
 On the way, I am familiarize with GitHub workflows, version-control systems and
 best practices for software development.
 \vspace{\entriespad}
 
-I consider myself as a self-taught coder who enjoys solving problems in a
-creative way applying the best practices to do it.
-So, I love to learn new tools improving my computer-science skills to help to
+I am a self-taught coder who enjoys solving problems in a creative way applying
+the best practices to do it.
+I love to learn new tools improving my computer-science skills to help to
 analyze data and fund the best way to show results.
 
 \section{Professional Experience}
@@ -233,9 +237,10 @@ analyze data and fund the best way to show results.
     An NSF-funded bilingual coding and science communication training program
     for early career geoscientists.
     \begin{lista}
-        \item {\bf Collaborated} in different tasks to create a good
-            foundation for the 10-week program to teach Python and science
-            communication.
+        \item {\bf Collaborated} in different tasks such as {\bf curriculum
+            development}, {\bf people management} and updating file records to
+            create a good foundation for the 10-week program to teach Python
+            and science communication.
         \item {\bf Led} and {\bf supervised} a team of 5+ trainers to teach how
             to code to 20 students, who proved good coding proficiency and
             communication skills by the end of the program.
@@ -302,8 +307,8 @@ analyze data and fund the best way to show results.
     }
     {%
     \begin{lista}
-        \item {\bf Elaborated} a scientific project to develop during a 5 years
-            PhD granted with a {\bf scholarship} from \conicet{}.
+        \item {\bf Developed} and {\bf further explored} a project throughout a
+            5-year PhD which was {\bf funded} by the \conicet{}.
         \item {\bf Compiled} and {\bf preprocessed} gravity and magnetic
             datasets from different sources (ground and satellite) using
             specialized software and Python libraries like \numpy{}, \pandas{},
@@ -442,6 +447,16 @@ analyze data and fund the best way to show results.
     \skill{Spanish}{Native}
     \skill{English}{Advanced}
 \end{cventries}
+
+
+\section{Service Work}
+
+\service{Member of \geolatinas{} community}{Support the community by
+        giving Python and Git courses, developing the coding group website
+        and advising other members on programming.}
+\service{Member of the \carpentries{} community}{Contribute to the
+        community as a lesson maintainer and instructor.}
+
 
 \section{Certifications}
 
