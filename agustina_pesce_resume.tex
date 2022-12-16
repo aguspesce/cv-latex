@@ -6,7 +6,10 @@
 
 % Define font
 \usepackage{fontspec}
-\setmainfont{Arial}
+\setmainfont{Latin Modern Sans}
+    % Cambria
+    %Arial
+
 
 % Define custom environments
 \usepackage{environ}
@@ -164,6 +167,11 @@
 \newcommand{\DOI}[1]{\href{https://www.doi.org/#1}{#1}}
 \newcommand{\LINKEDIN}[1]{\href{https://linkedin.com/in/#1}{#1}}
 
+\newcommand{\position}{%
+    % Data Scientist%
+    Data Analyst%
+}
+
 % ------------------
 % Configure hyperref
 % ------------------
@@ -184,8 +192,10 @@
 % Header
 % ------
 \maintitle{\fullname}
-\subtitle{PhD Geophysics | Data Scientist | Physics | Python | GNU/Linux | Open
-Source}
+\subtitle{
+    PhD Geophysics | Data Scientist | Physics | Software Developer | Python
+    | GNU/Linux
+}
 % \affiliation{}
 \vspace{\entriespad}
 
@@ -217,38 +227,6 @@ Source}
 
 \vspace{\entriespad}
 
-% I am a PhD in Geophysics with a strong formation in Physics, Mathematics,
-% Software Development and scientific research.
-% I have experience collecting, cleaning, processing and visualizing real data
-% with the goal to understand the inner structure of the Earth and analyze its
-% processes using different
-% Python libraries like \pandas{}, \scipy{}, \numpy{}, \xarray{}, \matplotlib{}
-% and \plotly{} among others.
-% I feel very comfortable at working with command line interfaces, Unix and Linux
-% OSs, version-control systems, GitHub workflows and I'm always eager to apply
-% best practices for software development.
-%
-% \vspace{\entriespad}
-%
-% I'm a quick learner who enjoys solving challenging problems in creative ways.
-% I love to learn new tools and improve my Computer Sciences skills to better
-% analyze data and find the best way to communicate results.
-% I'm currently looking for a Data Scientist position to integrate all my
-% knowledge into the IT industry.
-%
-% I am looking for a Data Scientist position to integrate all my knowledge into
-% the IT industry.
-
-PhD in Geophysics who's leaving Academia to pursuit a career in IT as Data
-Scientist.
-Skilled professional with almost a decade of experience in collecting,
-cleaning, processing and visualizing real geoscientific data.
-Experienced programmer in Python and Linux user who relies on version-control
-systems on daily basis and a loves to learn new tools and best practices for
-software development.
-Also a quick learner who enjoys solving challenging problems in creative ways
-in collaborative environments.
-
 \section{Professional Experience}
 
 \experience{Nov 2021~--~on}{Coding Coordinator and Trainer}{\coco}{%
@@ -265,7 +243,7 @@ in collaborative environments.
             communication skills by the end of the program.
         \item {\bf Organized} and {\bf supervised} a 1-week hackathon where
             participants developed a shared project using version control
-            system and \jupyter{} Notebooks, and communicated the achieved goals
+            system and Jupyter notebooks, and communicated the achieved goals
             and results through public presentations.
     \item {\bf Created} and {\bf maintained} a
             \href{https://github.com/CodeToCommunicate/CoCoLessons}{GitHub
@@ -346,14 +324,6 @@ in collaborative environments.
             higher quality scientific publications.
     \end{lista}
 }
-
-
-\section{Education}
-
-\begin{cventries}
-    \education{2014~--~2019}{PhD in Geophysics}{\fcefn, \unsj, Argentina}
-    \education{2005~--~2014}{Licentiate in Physics}{\fceia, \unr, Argentina}
-\end{cventries}
 
 
 \section{Projects}
@@ -445,18 +415,46 @@ in collaborative environments.
 }
 
 
+\section{Education}
+
+\begin{cventries}
+    \education{Oct 2022~--~On}{Data Science Bootcamp Online}{%
+        from \href{https://codigofacilito.com/programas/ciencia-datos}{Código Facilito}
+    }
+    \education{2014~--~2019}{PhD in Geophysics}{\fcefn, \unsj, Argentina}
+    \education{2005~--~2014}{Licentiate in Physics}{\fceia, \unr, Argentina}
+\end{cventries}
+
+
+\section{Certifications}
+
+\begin{cventries}
+    \singleline{2022}{%
+        Database course from
+        \href{https://codigofacilito.com/cursos/base-datos-profesional}{Código
+        Facilito}
+    }
+    \singleline{2022}{Maintainer for The Carpentry}
+    \singleline{2021}{Certified Software Carpentry Instructor}
+\end{cventries}
+
+
 \section{Technical Skills}
 
 \begin{cventries}
     \skill{Programming}{Python (\numpy{}, \pandas{}, \scipy{}, \xarray{},
-        \matplotlib{}, \plotly{}, \dash{}, \pygmt{}), Numba, bash, FORTRAN, C}
+        \matplotlib{}, \plotly{}, \dash{}, \pygmt{}), Numba, bash, FORTRAN,
+        C, SQL
+    }
+    \skill{Database}{MySQL}
     \skill{Markup}{Markdown, LaTeX, HTML}
     \skill{WebDev}{CSS, Bootstrap, Normalize, Static Site Generators
         (jekyll, urubu)}
     \skill{DevOps}{GNU/Linux, Unix terminal, VIM, Neovim, VS Code, git,
         GNU Make, SSH}
-    \skill{Other tools}{Jupyter Notebooks, JupyterLab, LibreOffice Suite,
-        GitHub Actions, maxima, Inkscape, GIMP, Krita}
+    \skill{Other tools}{Jupyter notebooks, JupyterLab, LibreOffice Suite,
+        GitHub Actions, maxima, Inkscape, GIMP, Krita, Docker, Google Cloud
+        Platform}
 \end{cventries}
 
 
@@ -475,14 +473,6 @@ in collaborative environments.
         and mentoring other members on programming.}
 \service{Member of \carpentries{} community}{Contribute to the
         community as a lesson maintainer and instructor.}
-
-
-\section{Certifications}
-
-\begin{cventries}
-    \singleline{2022}{Maintainer for The Carpentry}
-    \singleline{2021}{Certified Software Carpentry Instructor}
-\end{cventries}
 
 
 \section{Awards and Scholarships}
