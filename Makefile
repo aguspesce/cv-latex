@@ -1,4 +1,4 @@
-PROJECT=agustina_pesce_resume
+PROJECT=resume
 OUTDIR=_output
 LATEX=tectonic
 LATEX_ARGS=--outdir=$(OUTDIR)
