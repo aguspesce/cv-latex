@@ -6,10 +6,7 @@
 
 % Define font
 \usepackage{fontspec}
-\setmainfont{Latin Modern Sans}
-    % Cambria
-    %Arial
-
+\setmainfont{Lato}
 
 % Define custom environments
 \usepackage{environ}
@@ -167,10 +164,6 @@
 \newcommand{\DOI}[1]{\href{https://www.doi.org/#1}{#1}}
 \newcommand{\LINKEDIN}[1]{\href{https://linkedin.com/in/#1}{#1}}
 
-\newcommand{\position}{%
-    % Data Scientist%
-    Data Analyst%
-}
 
 % ------------------
 % Configure hyperref
@@ -221,9 +214,6 @@
 
 \vspace{\entriespad}
 % \color{mygray}{Last modified: \today}
-
-
-% \section{About me for Objective  Statement}
 
 \vspace{\entriespad}
 
@@ -334,15 +324,26 @@
     \carpentries{}
     }{%
     \begin{lista}
-    \item {\bf Got assigned} the role of maintainer of
-        \href{https://datacarpentry.org/python-ecology-lesson-es/}{Análisis
-        y visualización de datos usando Python}: one of the core lessons of
-        \carpentries{}.
-    \item {\bf Participated} in maintainers' meetings discussing how to improve
-        the current version of the lesson.
-    \item {\bf Contributed} to the improvement of
-        \href{https://github.com/swcarpentry/git-novice-es}{Control de
-        versiones con Git} lesson through reviewed GitHub Pull Requests.
+        \item {\bf Got assigned} the role of maintainer of
+            \href{https://datacarpentry.org/python-ecology-lesson-es/}{Análisis
+            y visualización de datos usando Python}: one of the core lessons of
+            \carpentries{}.
+        \item {\bf Participated} in maintainers' meetings discussing how to
+            improve the current version of the lesson.
+        \item {\bf Contributed} to the improvement of
+            \href{https://github.com/swcarpentry/git-novice-es}{Control de
+            versiones con Git} lesson through reviewed GitHub Pull Requests.
+    \end{lista}
+    }
+
+\experience{2022}{%
+    \href{https://github.com/aguspesce/journal_manager}{Journal manager} (Work
+    in progress)}{%
+    Journal manager developed in Python to help me to organize my week's tasks
+    and have a log file with my activities in different projects.
+    }{%
+    \begin{lista}
+        \item {\bf Designed} and {\bf implemented} the code.
     \end{lista}
     }
 
@@ -358,7 +359,7 @@
         \item {\bf Developed} an interactive web application and
             {\bf deployed} it on \heroku{}.
     \end{lista}
-}
+    }
 
 
 \experience{Apr 2019~--~On}{\mandyoc{} collaborator}{Open source tool to
@@ -387,7 +388,7 @@
         \item {\bf Implemented new features} with unit tests using \pytest{},
             documentation and an example of how to use it.
         \item {\bf Improved} the main website project.
-        \item {\bf Create new examples notebook} explaining how to use the
+        \item {\bf Created new examples notebook} explaining how to use the
             library.
         \item {\bf Made maintenance tasks} to fix CI, code automated tasks and
             delete deprecated code.
@@ -419,7 +420,9 @@
 
 \begin{cventries}
     \education{Oct 2022~--~On}{Data Science Bootcamp Online}{%
-        from \href{https://codigofacilito.com/programas/ciencia-datos}{Código Facilito}
+        from \href{https://codigofacilito.com/programas/ciencia-datos}{%
+            Código Facilito
+        }
     }
     \education{2014~--~2019}{PhD in Geophysics}{\fcefn, \unsj, Argentina}
     \education{2005~--~2014}{Licentiate in Physics}{\fceia, \unr, Argentina}
@@ -431,8 +434,9 @@
 \begin{cventries}
     \singleline{2022}{%
         Database course from
-        \href{https://codigofacilito.com/cursos/base-datos-profesional}{Código
-        Facilito}
+        \href{https://codigofacilito.com/cursos/base-datos-profesional}{%
+            Código Facilito
+        }
     }
     \singleline{2022}{Maintainer for The Carpentry}
     \singleline{2021}{Certified Software Carpentry Instructor}
@@ -443,8 +447,7 @@
 
 \begin{cventries}
     \skill{Programming}{Python (\numpy{}, \pandas{}, \scipy{}, \xarray{},
-        \matplotlib{}, \plotly{}, \dash{}, \pygmt{}), Numba, bash, FORTRAN,
-        C, SQL
+        \matplotlib{}, \plotly{}, \dash{}, \pygmt{}), bash, FORTRAN, C, SQL
     }
     \skill{Database}{MySQL}
     \skill{Markup}{Markdown, LaTeX, HTML}
@@ -468,18 +471,26 @@
 
 \section{Service Work}
 
-\service{Member of International \geolatinas{} community}{Support the community
-        by giving Python and Git courses, developing the coding group website
-        and mentoring other members on programming.}
-\service{Member of \carpentries{} community}{Contribute to the
-        community as a lesson maintainer and instructor.}
+\service{Member of International \geolatinas{} community}{%
+    Support the community by giving Python and Git courses, developing the
+    coding group website and mentoring other members on programming.
+    }
+\service{Member of \carpentries{} community}{%
+    Contribute to the community as a lesson maintainer and instructor.
+    }
+\service{Technical advisor in
+    \href{https://academy.climatematch.io/}{Climatematch Academy}.
+    }{%
+    Collaborate in the creation of the infrastructure to develop the lessons,
+    make the website and solve technical issues.
+    }
 
 
 \section{Awards and Scholarships}
 
 \begin{cventries}
     \singleline{2019~--~2022}{Postdoctoral Scholarship from \conicet}
-    \singleline{2014~--~2019}{Phd scholarship from \conicet}
+    \singleline{2014~--~2019}{PhD scholarship from \conicet}
     \singleline{2015}{Travel grants: SEG/ExxonMobil Student Education Program
         (SEP), New Orleans, USA}
 \end{cventries}
@@ -502,7 +513,6 @@
         Tectonophysics.
     }
 \end{cventries}
-
 
 \subsection{Books Chapters}
 
@@ -543,5 +553,4 @@
         of the presence of a weak layer in the numerical simulation of
         lithospheric subduction}}{EGU2020 General Assembly.}
 \end{cventries}
-
 \end{document}
