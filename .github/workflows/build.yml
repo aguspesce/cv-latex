@@ -1,0 +1,44 @@
+name: build-cv
+
+on:
+  pull_request:
+  push:
+    banches:
+      - main
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Setup miniconda with mamba
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          mamba-version: "latest"
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: cv
+          environment-file: environment.yml
+
+      - name: List installed packages
+        shell: bash -el {0}
+        run: mamba list
+
+      - name: Build cv
+        shell: bash -el {0}
+        run: |
+          make all
+          touch _output/.nojekyll
+
+      - name: Deploy 🚀
+        if: success() && github.event_name == 'push'
+        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
+        uses: JamesIves/github-pages-deploy-action@049a95c516cd5723d8cfde79dc7a79fcdcbd6c97
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: _build
