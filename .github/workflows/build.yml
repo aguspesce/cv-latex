@@ -15,14 +15,29 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Setup caching for tectonic
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic-${{ runner.os }}
+
+      - name: Setup caching for conda packages
+        uses: actions/cache@v3
+        with:
+          path: ~/conda_pkgs_dir
+          key: conda-${{ runner.os }}-${{ hashFiles('environment.yml') }}
+
       - name: Setup miniconda with mamba
         uses: conda-incubator/setup-miniconda@v2
         with:
-          mamba-version: "latest"
-          channels: conda-forge,defaults
-          channel-priority: true
+            environment-file: environment.yml
           activate-environment: cv
-          environment-file: environment.yml
+          miniforge-variant: Mambaforge
+          miniforge-version: "latest"
+          use-mamba: true
+          channel-priority: strict
+          # Needed for caching
+          use-only-tar-bz2: true
 
       - name: List installed packages
         shell: bash -el {0}
