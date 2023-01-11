@@ -13,13 +13,13 @@ Check its website for instructions on how to install it. If you are familiar
 with Anaconda, it can be installed from
 [conda-forge](https://github.com/conda-forge/tectonic-feedstock).
 
-#### Step 1 - Install a Python distribution
+### Step 1 - Install a Python distribution
 
 If you already have Anaconda or Miniconda installed, you can skip this step.
 If not, please follow the instructions for getting Anaconda up and running in
 your system: https://docs.anaconda.com/anaconda/install/
 
-#### Step 2 - Create the cv environment
+### Step 2 - Create the cv environment
 
 Now you could install all the dependencies through the conda package manager:
 
@@ -32,6 +32,8 @@ And then activate the environment:
 ```
 conda activate coco-fatiando
 ```
+
+### Step 3 - Build PDF
 
 I recommend using the `Makefile` to build the PDF:
 
