@@ -1,6 +1,5 @@
-name: create-pdf
+name: compile-pdf
 
-# Each workflow is triggered on some events (push, pull_request)
 on:
   pull_request:
   push:
@@ -46,5 +45,5 @@ jobs:
           # Needed for caching
           use-only-tar-bz2: true
 
-       - name: List installed packages
-         run: mamba list
+      - name: List installed packages
+        run: mamba list
