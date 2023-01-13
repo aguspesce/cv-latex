@@ -1,17 +1,16 @@
 # Curriculum Vitae
 
-Sources for my CV, written in LaTeX and using a custom template based on ....
+Sources for my resume written in LaTeX and using a custom template based on
+[santisoler/CV](https://github.com/santisoler/cv)
+
+My resume is available in a [PDF versions](https://raw.githubusercontent.com/aguspesce/cv-latex/gh-pages/resume.pdf).
 
 ## How to build
 
-To build the PDF version of the resume from the source file I use
+To build the PDF version of the resume from the source file, I use
 [Tectonic](https://tectonic-typesetting.github.io/en-US/), which is a
 modernizes self-contained LaTeX engine that's usually faster than using a
 regular LaTeX compiler.
-
-Check its website for instructions on how to install it. If you are familiar
-with Anaconda, it can be installed from
-[conda-forge](https://github.com/conda-forge/tectonic-feedstock).
 
 #### Step 1 - Install a Python distribution
 
@@ -30,14 +29,14 @@ conda env create -f environment.yml
 And then activate the environment:
 
 ```
-conda activate coco-fatiando
+conda activate cv
 ```
 
-I recommend using the `Makefile` to build the PDF:
+You can use the `Makefile` to build the PDF:
 
-- Use `make all` to **build** the PDF.
-- Use `make show` to **open** the PDF with your favourite PDF reader.
-- Use `make clean` to **remove** the built PDF.
+- `make all`: **build** the PDF.
+- `make show`: **open** the PDF with your favourite PDF reader.
+- `make clean`: **remove** the built PDF.
 
 ### Using texlive
 
