@@ -100,6 +100,8 @@
 \newcommand{\GoogleCP}{\href{https://cloud.google.com/}{Google Cloud Platform}}
 \newcommand{\heroku}{\href{https://www.heroku.com/}{Heroku}}
 \newcommand{\geolatinas}{\href{https://geolatinas.org/}{GeoLatinas}}
+\newcommand{\seaborn}{\href{https://seaborn.pydata.org}{seaborn}}
+\newcommand{\scikitlearn}{\href{https://scikit-learn.org/stable/index.html}{scikit‐learn}}
 
 % --------------------------
 % Variables and environments
@@ -185,10 +187,10 @@
 % Header
 % ------
 \maintitle{\fullname}
-\subtitle{
-    PhD Geophysics | Data Scientist | Physics | Software Developer | Python
-    | GNU/Linux
-}
+% \subtitle{
+%     PhD Geophysics | Data Scientist | Physics | Software Developer | Python
+%     | GNU/Linux
+% }
 % \affiliation{}
 \vspace{\entriespad}
 
@@ -336,6 +338,23 @@
     \end{lista}
     }
 
+\experience{2023}{%
+     \href{https://github.com/aguspesce/diabetes_predictor}{Diabetes predictor}
+     }{%
+     The project goal is to obtain a model that predicts the probability of
+     diabetes in a patient based on different clinical symptoms.
+     }{%
+     \begin{lista}
+        \item {\bf Created} a Jupyter notebook to {\bf explore and visualize
+            the data} using \pandas{} and \seaborn{} where the missing values
+            were replaced and the relationship between diabetes and the
+            different clinical symptoms was analyzed.
+         \item {\bf Wrote} a Jupyter notebook to {\bf tests 3 classification
+             algorithms} to generate a prediction model using the \scikitlearn{}
+             tools.
+     \end{lista}
+     }
+
 \experience{2022}{%
     \href{https://github.com/aguspesce/journal_manager}{Journal manager} (Work
     in progress)}{%
@@ -344,11 +363,14 @@
     }{%
     \begin{lista}
         \item {\bf Designed} and {\bf implemented} the code.
+        \item {\bf Wrote} a Makefile to install the journal manager as a
+             console script using
+             \href{https://setuptools.pypa.io/en/latest/index.html}{setuptools}.
     \end{lista}
     }
 
 \experience{2020}{
-    \href{https://dashboard-covid-ar.herokuapp.com/}{COVID-19 dashboard}
+    \href{https://github.com/aguspesce/dashboard-covid-ar/}{COVID-19 dashboard}
     }{%
     Visualization of the evolution of COVID-19 on each province of Argentina}{
     \begin{lista}
@@ -360,7 +382,6 @@
             {\bf deployed} it on \heroku{}.
     \end{lista}
     }
-
 
 \experience{Apr 2019~--~On}{\mandyoc{} collaborator}{Open source tool to
     simulate the mantle dynamics}{
@@ -419,7 +440,7 @@
 \section{Education}
 
 \begin{cventries}
-    \education{Oct 2022~--~On}{Data Science Bootcamp Online}{%
+    \education{Oct 2022~--~Jan 2023}{Data Science Bootcamp Online}{%
         from \href{https://codigofacilito.com/programas/ciencia-datos}{%
             Código Facilito
         }
@@ -449,15 +470,15 @@
     \skill{Programming}{Python (\numpy{}, \pandas{}, \scipy{}, \xarray{},
         \matplotlib{}, \plotly{}, \dash{}, \pygmt{}), bash, FORTRAN, C, SQL
     }
-    \skill{Database}{MySQL}
+    % \skill{Database}{MySQL}
     \skill{Markup}{Markdown, LaTeX, HTML}
     \skill{WebDev}{CSS, Bootstrap, Normalize, Static Site Generators
         (jekyll, urubu)}
     \skill{DevOps}{GNU/Linux, Unix terminal, VIM, Neovim, VS Code, git,
         GNU Make, SSH}
-    \skill{Other tools}{Jupyter notebooks, JupyterLab, LibreOffice Suite,
-        GitHub Actions, maxima, Inkscape, GIMP, Krita, Docker, Google Cloud
-        Platform}
+    \skill{Office}{Libre Office Suite, Microsoft Office}
+    \skill{Other tools}{Jupyter notebooks, JupyterLab, GitHub Actions, maxima,
+    Inkscape, GIMP, Krita, Docker, Google Cloud Platform}
 \end{cventries}
 
 
