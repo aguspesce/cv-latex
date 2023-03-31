@@ -1,24 +1,20 @@
 # Curriculum Vitae
 
-Sources for my resume written in LaTeX and using a custom template based on
-[santisoler/CV](https://github.com/santisoler/cv)
+This repository contains the source files for my resume, written in LaTeX using a custom template based on [santisoler/CV](https://github.com/santisoler/cv)
 
-My resume is available in a [PDF versions](https://raw.githubusercontent.com/aguspesce/cv-latex/gh-pages/resume.pdf).
+My CV is available in a [PDF versions](https://raw.githubusercontent.com/aguspesce/cv-latex/gh-pages/resume.pdf).
 
 ## How to build
 
 To build the PDF version of the resume from the source file, I use
-[Tectonic](https://tectonic-typesetting.github.io/en-US/), which is a
-modernizes self-contained LaTeX engine that's usually faster than using a
-regular LaTeX compiler.
+[Tectonic](https://tectonic-typesetting.github.io/en-US/), a modern and self-contained LaTeX engine that is faster than regular LaTeX compilers.
 
-#### Step 1 - Install a Python distribution
+### Step 1 - Install a Python distribution
 
-If you already have Anaconda or Miniconda installed, you can skip this step.
-If not, please follow the instructions for getting Anaconda up and running in
-your system: https://docs.anaconda.com/anaconda/install/
+If you already have Anaconda or Miniconda installed, you can skip this step. 
+Otherwise, please follow the instructions to get Anaconda up and running on your system by visiting: [https://docs.anaconda.com/anaconda/install/](https://docs.anaconda.com/anaconda/install/)
 
-#### Step 2 - Create the cv environment
+### Step 2 - Create the cv environment
 
 Now you could install all the dependencies through the conda package manager:
 
@@ -40,8 +36,8 @@ You can use the `Makefile` to build the PDF:
 
 ### Using texlive
 
-If you cannot install Tectonic, you can still generate the PDF out of you
-regular texlive installation. But you might need some extra packages:
+If you cannot install Tectonic, you can still generate the PDF using your regular texlive installation.
+However, you may need some extra packages:
 
 For Ubuntu or Debian:
 
@@ -60,5 +56,5 @@ latexmk -xelatex -outdir=_output cv.tex
 
 ## License
 
-All LaTeX template source code is distributed under the [BSD 3-clause
+The LaTeX template source code is distributed under the [BSD 3-clause
 License](https://opensource.org/licenses/BSD-3-Clause).
