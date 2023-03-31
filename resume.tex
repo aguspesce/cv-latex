@@ -1,7 +1,7 @@
 % !TEX TS-program = xelatex
-\documentclass[10pt, a4paper]{article}
+\documentclass[5pt, legal]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[vmargin=2cm, hmargin=2.0cm]{geometry}
+\usepackage[vmargin=2.0cm, hmargin=2.0cm]{geometry}
 \usepackage{enumitem} % fancier lists
 
 % Define font
@@ -65,7 +65,7 @@
 \newcommand{\nametitle}{}
 \newcommand{\firstname}{Agustina}
 \newcommand{\middlename}{}
-\newcommand{\familyname}{Pesce Lopez}
+\newcommand{\familyname}{Pesce}
 \newcommand{\email}{pesce.agustina@gmail.com}
 \newcommand{\website}{aguspesce.github.io}
 \newcommand{\github}{aguspesce}
@@ -100,8 +100,10 @@
 \newcommand{\GoogleCP}{\href{https://cloud.google.com/}{Google Cloud Platform}}
 \newcommand{\heroku}{\href{https://www.heroku.com/}{Heroku}}
 \newcommand{\geolatinas}{\href{https://geolatinas.org/}{GeoLatinas}}
+\newcommand{\scikitlearn}{\href{https://scikit-learn.org/stable/index.html}{scikit-lear}}
 \newcommand{\seaborn}{\href{https://seaborn.pydata.org}{seaborn}}
-\newcommand{\scikitlearn}{\href{https://scikit-learn.org/stable/index.html}{scikit‐learn}}
+\newcommand{\click}{\href{https://palletsprojects.com/p/click/}{Click}}
+\newcommand{\setuptools}{\href{https://setuptools.pypa.io/en/latest/index.html}{setuptools}}
 
 % --------------------------
 % Variables and environments
@@ -152,11 +154,11 @@
     \end{minipage}
     {#4} \vspace{\entriespad}
 }
-\newcommand{\skill}[2]{{\bf \large #1} & {#2} \vspace{\entriespad} \\}
-\newcommand{\singleline}[2]{{#1} & {#2} \vspace{\entriespad} \\}
-\newcommand{\paper}[3]{{#1} & {{#2}, \emph{#3}} \vspace{\entriespad} \\}
-\newcommand{\talk}[3]{{#1} & {{#2}, \emph{#3}} \vspace{\entriespad} \\}
-\newcommand{\service}[2]{{\bf \large #1} \newline {#2} \vspace{\entriespad} \\}
+\newcommand{\skill}[2]{{\bf \large #1} & {#2} \vspace{\entriespad}\\}
+\newcommand{\singleline}[2]{{#1} & {#2} \vspace{\entriespad}\\}
+\newcommand{\paper}[3]{{#1} & {{#2}, \emph{#3}} \vspace{\entriespad}\\}
+\newcommand{\talk}[3]{{#1} & {{#2}, \emph{#3}} \vspace{\entriespad}\\}
+\newcommand{\service}[2]{{\bf \large #1} \newline {#2} \vspace{\entriespad}\\}
 
 % Macros
 \newcommand{\MAIL}[1]{\href{mailto:#1}{#1}}
@@ -191,7 +193,7 @@
 %     PhD Geophysics | Data Scientist | Physics | Software Developer | Python
 %     | GNU/Linux
 % }
-% \affiliation{}
+\affiliation{}
 \vspace{\entriespad}
 
 \begin{minipage}[t]{0.60\linewidth}
@@ -201,6 +203,7 @@
         \textbf{email:} \MAIL{\email}
         \\
         \textbf{website:} \WEBSITE{\website}
+        \\
     \end{flushleft}
 \end{minipage}
 \hfill
@@ -220,32 +223,29 @@
 \vspace{\entriespad}
 
 \section{Professional Experience}
-
 \experience{Nov 2021~--~on}{Coding Coordinator and Trainer}{\coco}{%
     \newline
     A NSF-funded bilingual coding and science communication training program
     for early career geoscientists.
     \begin{lista}
-        \item {\bf Collaborated} in different tasks such as {\bf curriculum
+        \item {\bf Collaborated} in multiple tasks including {\bf curriculum
             development}, {\bf people management} and updating file records to
-            create a good foundation for the 10-week program to teach Python
-            and science communication.
-        \item {\bf Led} and {\bf supervised} a team of 5+ trainers to teach how
-            to code to 20 students, who proved good coding proficiency and
-            communication skills by the end of the program.
-        \item {\bf Organized} and {\bf supervised} a 1-week hackathon where
-            participants developed a shared project using version control
-            system and Jupyter notebooks, and communicated the achieved goals
-            and results through public presentations.
-    \item {\bf Created} and {\bf maintained} a
+            stablish a strong foundation for the 10-week program focused on
+            teaching Python and science communication, as well as a 1-week
+            hackathon where participants developed a shared project.
+        \item {\bf Led} and {\bf supervised} a team of 5+ trainers to teach
+            coding skills to 20 students, who proved good coding proficiency
+            and communication skills by the end of the program.
+        \item {\bf Created} and {\bf maintained} a
             \href{https://github.com/CodeToCommunicate/CoCoLessons}{GitHub
-            repository} with the course material: \jupyter{} Notebooks used to
-            teach during each lesson.
-    \item {\bf Reported} the progress of the project to superior managers and
-            external evaluators.
+            repository} containing the course material: \jupyter{} Notebooks
+            used to teach during each lesson.
+            This ensured that the course materials were up-to-date and easily
+            accessible for future students.
+        % \item {\bf Reported} the progress of the project to superior
+        % managers and external evaluators.
     \end{lista}
 }
-
 \experience{Apr 2019~--~Mar 2022}{Postdoctoral Researcher}{\igsv, Argentina}{%
     Project title: {\em Influence of a mantle plume in subduction zones by
     geodynamics numerical models.}
@@ -253,23 +253,24 @@
         \item {\bf Acquired} the knowledge to operate \mandyoc{}, a software
             for running geodynamical numerical simulations of the Earth's
             interior.
-        \item {\bf Developed} a Bash pipeline to create subduction models as
-            inputs for \mandyoc{}, run the simulations remotely on \GoogleCP{}
-            and download the outputs.
+        \item {\bf Developed} a Bash pipeline that enables the creation of
+            subduction models for \mandyoc{}, facilitates the remote
+            execution of simulation on \GoogleCP{}, and allows for easy
+            download of the outputs.
         \item {\bf Built}
-            \href{https://github.com/aguspesce/tapioca}{tapioca}: a Python
+            \href{https://github.com/aguspesce/tapioca}{tapioca}, a Python
             package to transform and visualize the outputs of \mandyoc{} using
             \xarray{} and \matplotlib{}.
         \item {\bf Gave} an
             \href{https://github.com/aguspesce/online_seminar_iag-usp}{online
-            seminar} to instruct lab members on how to handle multidimensional
-            arrays with \xarray{}.
-        \item {\bf Presented} project results in
+            seminar} to instruct lab members on the handling of
+            multidimensional arrays with \xarray{}.
+        \item {\bf Presented project results} in
             \href{https://doi.org/10.5194/egusphere-egu2020-734}{international
-            scientific meetings}.
+            scientific meetings}, demonstrating my ability to effectively
+            communicate technical information to a wide audience.
     \end{lista}
 }
-
 \experience{Oct 2019~--~Mar 2022}{Assistant Professor of Practice}{%
     \fcefn, \unsj, Argentina}{
     \begin{lista}
@@ -284,17 +285,12 @@
             advantage of its tools.
     \end{lista}
 }
-
 \experience{Apr 2014~--~Mar 2019}{PhD Researcher}{%
-    \igsv, Argentina \newline
+    \igsv, Argentina
+    \newline
     Thesis title:
-        {\em
-            \href{https://ri.conicet.gov.ar/handle/11336/84580}{
-                Geophysical analysis of the Loncopué Trough, Neuquén, Argentina
-            }
-        }
-    }
-    {%
+        {\em \href{https://ri.conicet.gov.ar/handle/11336/84580}{%
+            Geophysical analysis of the Loncopué Trough, Neuquén, Argentina}}}{%
     \begin{lista}
         \item {\bf Developed} and {\bf further explored} a project throughout a
             5-year PhD which was {\bf funded} by the \conicet{}.
@@ -303,74 +299,66 @@
             specialized software and Python libraries like \numpy{}, \pandas{},
             \xarray{} and \fatiando{}.
         \item {\bf Applied geophysical processing steps} to produce
-            interpretable maps of the study area.
+            interpretable maps of the study area using \matplotlib{} and
+            \pygmt{}.
         \item {\bf Inverted} the gravity data to get better understanding of
-            the underlying structures and bodies beneath the Earth's surface.
-        \item {\bf Published} research results in peer-reviewed scientific
-            journals and {\bf participated} in the writing of book chapters.
+            the underlying structures and bodies beneath the Earth's surface
+            using \fatiando{} tools.
+        \item {\bf Published research results} in peer-reviewed scientific
+            journals and {\bf contributed} in the writing of book chapters.
         \item {\bf Presented} my research in international scientific meetings.
-        \item {\bf Organized}, {\bf designed} and {\bf took part} of field
-            trips to perform data acquisition according to the needs of our
-            team.
-        \item {\bf Assisted} my peers to improve their research, achieving
+        \item {\bf Assisted my peers} to improve their research, achieving
             higher quality scientific publications.
     \end{lista}
 }
 
 
 \section{Projects}
-
 \experience{Jun 2022~--~On}{%
     Maintainer of collaborative Python lesson
     }{%
     \carpentries{}
     }{%
     \begin{lista}
-        \item {\bf Got assigned} the role of maintainer of
+        \item {\bf Assigned} the role of maintainer of
             \href{https://datacarpentry.org/python-ecology-lesson-es/}{Análisis
-            y visualización de datos usando Python}: one of the core lessons of
+            y visualización de datos usando Python}, one of the core lessons of
             \carpentries{}.
         \item {\bf Participated} in maintainers' meetings discussing how to
             improve the current version of the lesson.
+            % This demonstrated my ability to work collaboratively with a team
+            % and my commitment to improving the quality of the lesson.
         \item {\bf Contributed} to the improvement of
             \href{https://github.com/swcarpentry/git-novice-es}{Control de
-            versiones con Git} lesson through reviewed GitHub Pull Requests.
+            versiones con Git} reviewing GitHub Pull Requests.
     \end{lista}
-    }
-
+}
 \experience{2023}{%
-     \href{https://github.com/aguspesce/diabetes_predictor}{Diabetes predictor}
-     }{%
-     The project goal is to obtain a model that predicts the probability of
-     diabetes in a patient based on different clinical symptoms.
-     }{%
-     \begin{lista}
-        \item {\bf Created} a Jupyter notebook to {\bf explore and visualize
-            the data} using \pandas{} and \seaborn{} where the missing values
-            were replaced and the relationship between diabetes and the
-            different clinical symptoms was analyzed.
-         \item {\bf Wrote} a Jupyter notebook to {\bf tests 3 classification
-             algorithms} to generate a prediction model using the \scikitlearn{}
-             tools.
-     \end{lista}
-     }
-
-\experience{2022}{%
-    \href{https://github.com/aguspesce/journal_manager}{Journal manager} (Work
-    in progress)}{%
-    It is a command-line program developed using Python to help me to organize
-    my week's tasks and have a log file with my activities in different
-    projects.
+    \href{https://github.com/aguspesce/diabetes_predictor}{Diabetes predictor}
+    }{%
+    The project goal is to create a model to predict the probability of
+    diabetes in patients.
+    % This required advanced knowledge of data exploration, visualization, and
+    % classification algorithms in Python.
     }{%
     \begin{lista}
-        \item {\bf Designed} and {\bf implemented} the code using
-            \href{https://palletsprojects.com/p/click/}{Click}.
-        \item {\bf Wrote} a Makefile to install the journal manager as a
-             console script using
-             \href{https://setuptools.pypa.io/en/latest/index.html}{setuptools}.
+        \item {\bf Utilized} \pandas{} and \seaborn{} to explore and visualize
+            the data in a \jupyter{} Notebook.
+        \item {\bf Created a code} to test 3 different classification
+            algorithms, including logistic regression and decision trees, to
+            generate a prediction model using the \scikitlearn{} tools.
+    \end{lista}
+}
+\experience{2022}{%
+    \href{https://github.com/aguspesce/journal_manager}{Journal manager}}{%
+    A custom command‐line tool developed using Python to manage and organize my
+    weekly tasks and activity logs across multiple projects.
+    }{%
+    \begin{lista}
+        \item {\bf Designed} and {\bf implemented} the code using \click{}.
+        \item {\bf Wrote} a Makefile to simplify the installation process.
     \end{lista}
     }
-
 \experience{2020}{
     \href{https://github.com/aguspesce/dashboard-covid-ar/}{COVID-19 dashboard}
     }{%
@@ -378,25 +366,26 @@
     \begin{lista}
         \item {\bf Loaded}, {\bf cleaned} and {\bf processed} the data using
             \pandas{}.
-        \item {\bf Created interactive plots} showing the evolution of
-            cases for each province using \plotly{} and \dash{}.
-        \item {\bf Developed} an interactive web application and
-            {\bf deployed} it on \heroku{}.
+        \item Utilized \plotly{} and \dash{} to {\bf create interactive plots}
+            that allowed users to easily track and analyze the spread of the
+            virus across different regions in Argentina.
+        % \item {\bf Developed} an interactive web application and
+        %     {\bf deployed} it on \heroku{}.
     \end{lista}
-    }
-
-\experience{Apr 2019~--~On}{\mandyoc{} collaborator}{Open source tool to
+}
+\experience{Apr 2019~--~Mar 2022}{\mandyoc{} collaborator}{Open source tool to
     simulate the mantle dynamics}{
     \begin{lista}
-        \item {\bf Automated deployment} of the documentation website
-            through GitHub Actions.
-        \item {\bf Designed and coded tests} to check the correct performing of
-            the code using \pytest{}.
-        \item {\bf Worked} on community building adding license, code of
+        \item {\bf Automated the deployment} of the documentation website
+            using GitHub Actions, ensuring that users can easily access
+            up-to-date documentation.
+        \item {\bf Designed} and {\bf coded tests} to check the correct
+            performing of the code using \pytest{}.
+        \item {\bf Worked on community building} adding license, code of
             conduct, how to contribute guidelines and Readme to improve the
             repository.
         \item {\bf Restructured} the examples gallery using \jupyter{}
-            notebooks to show how to use the code with real examples.
+            Notebooks to show how to use the code with real examples.
         \item {\bf Developed} a Makefile for building and installing the
             program.
         \item {\bf Collaborate} in the publication of \mandyoc{} code in the
@@ -404,14 +393,13 @@
             Open Source Software}.
     \end{lista}
 }
-
-\experience{2016~--~On}{\fatiando{} collaborator}{Open source tools for
-    geophysics}{
+\experience{2016~--~On}{\fatiando{} collaborator}{Open source tools for geophysics}{%
     \begin{lista}
         \item {\bf Implemented new features} with unit tests using \pytest{},
             documentation and an example of how to use it.
-        \item {\bf Improved} the main website project.
-        \item {\bf Created new examples notebook} explaining how to use the
+        \item {\bf Improved} the main website project by updating content and
+            optimizing performance.
+        \item {\bf Created new examples notebooks} explaining how to use the
             library.
         \item {\bf Made maintenance tasks} to fix CI, code automated tasks and
             delete deprecated code.
@@ -420,72 +408,73 @@
             design examples, etc.
     \end{lista}
 }
-
 \experience{2021}{Website developer}{}{%
     \begin{lista}
-    \item {\bf Created website layouts} for different projects:
-        \begin{lista}
-            \item \href{https://dianaceroallard.github.io/}{%
-                Diana Acero personal website}.
-            \item \href{https://geolatinas.github.io/}{%
-                Geolatinas coding group: organization website}
-            \item \href{https://aguspesce.github.io/web-cromografica}{%
-                CromoGráfica: business website currently under development}.
-        \end{lista}
-        \item {\bf Developed a clean code} for all projects and {\bf deployed}
+    \item {\bf Designed and implemented} responsive website layouts using HTML,
+            CSS for different projects:
+            \begin{lista}
+                \item \href{https://dianaceroallard.github.io/}{%
+                    Diana Acero personal website}.
+                \item \href{https://geolatinas.github.io/}{%
+                    Geolatinas coding group: organization website}
+                \item \href{https://aguspesce.github.io/web-cromografica}{%
+                    CromoGráfica: business website currently under development}.
+            \end{lista}
+        \item {\bf Created a clean code} for all projects and {\bf deployed}
             it using GitHub Actions and GitHub Pages.
-        \item {\bf Maintained} and {\bf updated} websites based on feedback.
+        \item {\bf Maintained} and {\bf updated} websites based on feedback
+            from stakeholders and users.
     \end{lista}
 }
 
 
 \section{Education}
-
 \begin{cventries}
-    \education{Oct 2022~--~Jan 2023}{Data Science Bootcamp Online}{%
-        from \href{https://codigofacilito.com/programas/ciencia-datos}{%
-            Código Facilito
-        }
-    }
     \education{2014~--~2019}{PhD in Geophysics}{\fcefn, \unsj, Argentina}
     \education{2005~--~2014}{Licentiate in Physics}{\fceia, \unr, Argentina}
 \end{cventries}
 
 
 \section{Certifications}
-
 \begin{cventries}
+    \singleline{2022}{Data Science Bootcamp Online from
+        \href{https://codigofacilito.com/programas/ciencia-datos}{%
+            Código Facilito
+            }}
     \singleline{2022}{%
         Database course from
         \href{https://codigofacilito.com/cursos/base-datos-profesional}{%
             Código Facilito
-        }
-    }
-    \singleline{2022}{Maintainer for The Carpentry}
+            }}
     \singleline{2021}{Certified Software Carpentry Instructor}
 \end{cventries}
 
 
 \section{Technical Skills}
-
 \begin{cventries}
-    \skill{Programming}{Python (\numpy{}, \pandas{}, \scipy{}, \xarray{},
-        \matplotlib{}, \plotly{}, \dash{}, \pygmt{}), bash, FORTRAN, C, SQL
-    }
-    % \skill{Database}{MySQL}
+    \skill{Programming}{%
+        Python (\numpy{}, \pandas{}, \scipy{}, \xarray{}, \scikitlearn{},
+        \matplotlib{}, \plotly{}, \dash{}, \pygmt{}, \seaborn{}), bash,
+        FORTRAN, C, SQL
+        }
     \skill{Markup}{Markdown, LaTeX, HTML}
-    \skill{WebDev}{CSS, Bootstrap, Normalize, Static Site Generators
-        (jekyll, urubu)}
-    \skill{DevOps}{GNU/Linux, Unix terminal, VIM, Neovim, VS Code, git,
-        GNU Make, SSH}
-    \skill{Office}{Libre Office Suite, Microsoft Office}
-    \skill{Other tools}{Jupyter notebooks, JupyterLab, GitHub Actions, maxima,
-    Inkscape, GIMP, Krita, Docker, Google Cloud Platform}
+    \skill{WebDev}{%
+        CSS, Bootstrap, Normalize, Static Site Generators (jekyll, urubu)
+        }
+    \skill{DevOps}{%
+        GNU/Linux, Unix terminal, VIM, Neovim, VS Code, git, GNU Make, SSH,
+        \setuptools{}
+        }
+    \skill{Office}{LibreOffice Suite, Microsoft Office}
+    \skill{Other tools}{%
+        Jupyter notebooks, JupyterLab, GitHub Actions, Maxima, Inkscape, GIMP,
+        Krita, Docker, Google Cloud Platform, Google Workspace and Google
+        Drive,
+        }
 \end{cventries}
 
 
 \section{Languages}
-
 \begin{cventries}
     \skill{Spanish}{Native}
     \skill{English}{Advanced}
@@ -493,27 +482,43 @@
 
 
 \section{Service Work}
-
+\service{Part of Steering Council in \fatiando{}}{%
+     I help plan, organize, and direct the project's operations and programs.
+    }
+\service{Part of Steering Council in
+    \href{https://opensciencelabs.org/}{Open Science Labs}}{%
+    I help promote a friendly virtual space for learning open-source tools for
+    people in Latin America.
+    }
+\service{Volunteers in \href{https://2023.pycascades.com/}{PyCascade 2023}}{%
+    I collaborated at the Check-in Desk/Registration.
+    }
+\service{Member of \href{https://www.pyopensci.org/}{pyOpenSci} community}{%
+    I have contributed by conducting a peer review for Xclim.
+    Additionally, I am helping to create a mentorship program aimed at engaging
+    individuals from diverse backgrounds and identities in all aspects of the
+    peer review process.
+    }
 \service{Member of International \geolatinas{} community}{%
-    Support the community by giving Python and Git courses, developing the
-    coding group website and mentoring other members on programming.
+     I support the community by giving Python and Git courses, developing the
+     coding group website, and mentoring other members on programming.
     }
 \service{Member of \carpentries{} community}{%
-    Contribute to the community as a lesson maintainer and instructor.
+    I contribute to the community as a lesson maintainer and instructor.
     }
-\service{Technical advisor in
+\service{%
+    Technical advisor in
     \href{https://academy.climatematch.io/}{Climatematch Academy}.
     }{%
-    Collaborate in the creation of the infrastructure to develop the lessons,
-    make the website and solve technical issues.
+    I am collaborating in the creation of the infrastructure to develop the
+    lessons, build the website and solve technical issues.
     }
 
 
 \section{Awards and Scholarships}
-
 \begin{cventries}
-    \singleline{2019~--~2022}{Postdoctoral Scholarship from \conicet}
-    \singleline{2014~--~2019}{PhD scholarship from \conicet}
+    \singleline{2019~--~2022}{Postdoctoral Scholarship from \conicet{}}
+    \singleline{2014~--~2019}{PhD scholarship from \conicet{}}
     \singleline{2015}{Travel grants: SEG/ExxonMobil Student Education Program
         (SEP), New Orleans, USA}
 \end{cventries}
@@ -521,59 +526,62 @@
 
 \section{Highlight Publications}
 \subsection{Peer-reviewed papers}
-
 \begin{cventries}
-    \paper{2022}{\href{https://joss.theoj.org/papers/10.21105/joss.04070.pdf}{%
-        Mandyoc: A finite element code to simulate thermochemical convection in
-        parallel}}{Journal of Open-Source Software, 7(71). 4070.}
-
-    \paper{2021}{\href{https://revista.geologica.org.ar/raga/article/view/246}{%
-        Sección eléctrica cortical a través de la fosa de Loncopué}}{Revista de
-        la Asociación Geológica Argentina 78 (2), 333--337.}
-
-    \paper{2020}{\href{https://doi.org/10.1016/j.tecto.2020.228402}{Oligocene
-        to present shallow subduction beneath the southern Puna plateau}}{%
-        Tectonophysics.
-    }
+    \paper{2022}{%
+        \href{https://joss.theoj.org/papers/10.21105/joss.04070.pdf}{%
+            Mandyoc: A finite element code to simulate thermochemical
+            convection in parallel}%
+        }{Journal of Open-Source Software, 7(71). 4070.}
+    \paper{2021}{%
+        \href{https://revista.geologica.org.ar/raga/article/view/246}{%
+            Sección eléctrica cortical a través de la fosa de Loncopué}%
+        }{Revista de la Asociación Geológica Argentina 78 (2), 333--337.}
+    \paper{2020}{%
+        \href{https://doi.org/10.1016/j.tecto.2020.228402}{%
+        Oligocene to present shallow subduction beneath the southern}}{%
+        Tectonophysics.}
 \end{cventries}
 
 \subsection{Books Chapters}
-
 \begin{cventries}
     \paper{2020}{%
         \href{https://link.springer.com/chapter/10.1007/978-3-030-29680-3_22}{%
-        Pliocene to Quaternary Retroarc Extension in the Neuquén Basin:
-        Geophysical Characterization of the Loncopué Trough}}{Opening and
-        closure of the Neuquén Basin in the Southern Andes, Springer}
-
+            Pliocene to Quaternary Retroarc Extension in the Neuquén Basin:
+            Geophysical Characterization of the Loncopué Trough}%
+        }{Opening and closure of the Neuquén Basin in the Southern Andes, Springer}
     \paper{2020}{%
         \href{https://link.springer.com/chapter/10.1007/978-3-030-29680-3_20}{%
-        Plume Subduction Beneath the Neuquén Basin and the Last Mountain
-        Building Stage of the Southern Central Andes}}{Opening and closure of
-        the Neuquén Basin in the Southern Andes, Springer}
+            Plume Subduction Beneath the Neuquén Basin and the Last Mountain
+            Building Stage of the Southern Central Andes}%
+        }{Opening and closure of the Neuquén Basin in the Southern Andes, Springer}
 \end{cventries}
 
 \section{Highlight Talks}
-
 \begin{cventries}
     \talk{2022}{%
         \href{https://www.youtube.com/watch?v=wzrIF4zpshM&feature=emb_title}{%
-        Mandyoc: A finite element code to simulate thermochemical convection
-        in parallel}}{presented at Transform 2022.}
-
-    \talk{2021}{\href{https://github.com/GeoLatinas/intro-to-git-2021}{%
-        Introduction to Git and GitHub}}{for GeoLatinas.}
-
-    \talk{2021}{\href{https://github.com/fatiando/2021-gsh}{Fatiando a Terra:
-        Open-source tools for geophysics}}{Online talk given to the Geophysical
-        Society of Houston (GSH).}
-
-    \talk{2021}{\href{https://doi.org/10.5194/egusphere-egu21-8291}{Harmonica
-        and Boule: Modern Python tools for geophysical gravimetry}}{EGU2021
-        General Assembly.}
-
-    \talk{2020}{\href{https://doi.org/10.5194/egusphere-egu2020-734}{Evaluation
-        of the presence of a weak layer in the numerical simulation of
-        lithospheric subduction}}{EGU2020 General Assembly.}
+            Mandyoc: A finite element code to simulate thermochemical convection
+            in parallel}%
+        }{presented at Transform 2022.}
+    \talk{2021}{%
+        \href{https://github.com/GeoLatinas/intro-to-git-2021}{%
+            Introduction to Git and GitHub}%
+        }{for GeoLatinas.}
+    \talk{2021}{%
+        \href{https://github.com/fatiando/2021-gsh}{%
+            Fatiando a Terra: Open-source tools for geophysics}%
+        }{Online talk given to the Geophysical Society of Houston (GSH).}
+    \talk{2021}{%
+        \href{https://doi.org/10.5194/egusphere-egu21-8291}{%
+            Harmonica and Boule: Modern Python tools for geophysical
+            gravimetry}%
+        }{EGU2021 General Assembly.}
+    \talk{2020}{%
+        \href{https://doi.org/10.5194/egusphere-egu2020-734}{%
+            Evaluation of the presence of a weak layer in the numerical
+            simulation of lithospheric subduction}%
+        }{EGU2020 General Assembly.}
 \end{cventries}
+
 \end{document}
+
